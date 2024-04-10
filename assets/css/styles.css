@@ -5,8 +5,10 @@
 :root {
     --primary-color: #0f1b4c;
 }
-html {
+html,
+body {
     font-size: 62.5%;
+    scroll-behavior: smooth;
 }
 
 body {
