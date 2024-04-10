@@ -57,7 +57,7 @@ a {
 .navbar {
     display: flex;
     align-items: center;
-    padding: 38px;
+    padding-top: 50px;
 }
 
 .navbar ul {
