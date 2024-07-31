@@ -105,6 +105,10 @@ a {
     margin-left: 18px;
     border-radius: 8px;
 }
+
+.mobile__header {
+    display: none;
+}
 /* Header */
 
 /* Hero */
@@ -158,9 +162,11 @@ a {
     font-weight: 500;
     line-height: 1.25; /* 125% */
 }
+
 .row-desc {
     margin-top: 23px;
 }
+
 .clients .images {
     display: flex;
     justify-content: space-between;
@@ -296,7 +302,8 @@ a {
 
 /* featured item */
 .featured .list {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 30px;
     margin-top: 70px;
 }
@@ -598,7 +605,7 @@ a {
 }
 
 .footer .row-top {
-    gap: 185px;
+    column-gap: 185px;
 }
 
 .footer .heading {

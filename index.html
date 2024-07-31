@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="./assets/css/reset.css" />
         <link rel="stylesheet" href="./assets/fonts/stylesheet.css" />
         <link rel="stylesheet" href="./assets/css/styles.css" />
+        <link rel="stylesheet" href="./assets/css/responsive.css" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
@@ -87,21 +88,38 @@
         <!-- link favicon -->
     </head>
     <body>
+        <!-- PC Header -->
         <header class="fixed-header">
             <div class="content">
                 <!-- navbar -->
                 <nav class="navbar">
+                    <!-- tablet/mobile Menu -->
+                    <label for="checkbox" class="toggle__menu">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 448 512"
+                        >
+                            <path
+                                fill="CurrentColor"
+                                d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"
+                            />
+                        </svg>
+                    </label>
                     <!-- Logo -->
                     <a href="#">
                         <img src="./assets/img/logo.svg" alt="Besnik"
                     /></a>
                     <!-- Navigation -->
-                    <ul>
+                    <ul id="pc__nav">
                         <li><a href="#home">Home</a></li>
                         <li><a href="#services">Services</a></li>
                         <li><a href="#features">Features</a></li>
                         <li><a href="#resources">Resources</a></li>
                         <li><a href="#contact">Contact</a></li>
+                        <li class="show-on-mobile separate">
+                            <a href="#!">Sign in</a>
+                        </li>
+                        <li class="show-on-mobile"><a href="#!">Sign up</a></li>
                     </ul>
                     <!-- Action -->
                     <div class="action">
@@ -109,6 +127,40 @@
                         <a href="" class="btn action-btn">Sig up</a>
                     </div>
                 </nav>
+            </div>
+        </header>
+
+        <!-- Tablet/mobile Header -->
+        <header class="mobile__header">
+            <input
+                type="checkbox"
+                name=""
+                id="checkbox"
+                class="menu__check"
+                hidden
+            />
+            <!-- menu overlay -->
+            <label for="checkbox" class="menu__overlay"></label>
+
+            <!-- menu drawer -->
+            <div class="menu__drawer">
+                <!-- Logo -->
+                <a href="#">
+                    <img
+                        src="./assets/img/logo.svg"
+                        alt="Besnik"
+                        class="menu__drawer--logo"
+                /></a>
+
+                <!-- Navigation -->
+                <ul id="mobile__nav"></ul>
+                <script>
+                    const pcNav = document.querySelector("#pc__nav");
+                    const mobileNav = document.querySelector("#mobile__nav");
+
+                    // Copy form PC nav -> form mobile nav
+                    mobileNav.innerHTML = pcNav.innerHTML;
+                </script>
             </div>
         </header>
         <main id="home">
@@ -159,7 +211,7 @@
                         <p class="desc">
                             More than 45,000+ companies trust besnik
                         </p>
-                        <p class="desc">5 Star Ratings (2k+ Review)</p>
+                        <p class="desc hide-on-mobile">5 Star Ratings (2k+ Review)</p>
                     </div>
                     <!-- trademark -->
                     <div class="images">
@@ -398,6 +450,10 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+
+                    <div class="view-all show-on-mobile">
+                        <a href="" class="btn">View All Properties</a>
                     </div>
                 </div>
             </div>
